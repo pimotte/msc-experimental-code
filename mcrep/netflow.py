@@ -69,5 +69,7 @@ class Netflow:
         consumption = nx.maximum_flow_value(self.graph, self.identity, node)
 
         self.graph.add_node(node, capacity=max(0, contribution-consumption))
+        self.graph.add_node(node, bartercast=contribution-consumption)
+
 
 
